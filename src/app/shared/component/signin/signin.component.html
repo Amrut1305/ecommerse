@@ -1,0 +1,59 @@
+<div class="row mt-5">
+    <div class="col-md-7">
+        <div class="formImage">
+            <img src="assets/scss/images/formImage/WhatsApp Image 2025-05-17 at 22.30.07_c71e61d7.jpg" alt="">
+        </div>
+    </div>
+    <div class="col-md-5 d-flex align-items-center justify-content-center">
+        <div class="form">
+            <div class="exclusiveForm">
+                <h2>{{allreadyHasAcc?'Log in to Exclusive': 'Create an account'}}</h2>
+                <p>Enter your details below</p>
+                <ng-container *ngIf="allreadyHasAcc">
+                    <form [formGroup]="LoginForm" (ngSubmit)="onSignin()">
+                        <mat-form-field class="w-100" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="text" formControlName="email">
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100" appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="text" formControlName="password">
+                        </mat-form-field>
+
+                        <button class="btn formBtn">Sign In</button>
+                        <button class="btn googleBtn">Google</button>
+                        <a class="btn btn-link hasAccLink" (click)="allreadyHasAcc=false" href="">I don't have an account</a>
+                    </form>
+                </ng-container>
+
+                <ng-container *ngIf="!allreadyHasAcc">
+                    <form [formGroup]="SignUpForm" (ngSubmit)="onSignUp()">
+                        <mat-form-field class="w-100" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="text" formControlName="email">
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100" appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="text" formControlName="password">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label>User Role</mat-label>
+                            <mat-select  formControlName="userRole">
+                                <mat-option value="buyer">Buyer</mat-option>
+                                <mat-option value="admin">Admin</mat-option>
+                                <mat-option value="superAdmin">Super Admin</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <button class="btn formBtn">Sign Up</button>
+                        <button class="btn googleBtn">Googele</button>
+                        <a class="btn btn-link hasAccLink" (click)="allreadyHasAcc=true">I already have an account</a>
+                    </form>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

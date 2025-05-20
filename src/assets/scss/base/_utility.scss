@@ -1,0 +1,53 @@
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.exclusiveForm{
+    height: 350px;
+    width: 400px;
+}
+.formImage{
+    width: 500px;
+    object-fit: cover;
+}
+.textDark{
+    color: #000;
+}
+
+.formBtn{
+  width: 100%;
+  background-color: $primary-color;
+  color: $light-text;
+  &:hover{
+    border: 1px solid $primary-color;
+    background-color: $ter-color;
+    color: $primary-color;
+  }
+}
+.hasAccLink,
+.googleBtn{
+  color: $dark-text;
+  &:hover{
+    color: $dark-text;
+    text-decoration: none;
+  }
+}
+.footer-section{
+  background-color: $secondary-color;
+  color: $ter-color;
+  .footerList{
+    color: $ter-color;
+    li{
+      background-color: transparent;
+      font-size: 20px;
+      .search-wrapper{
+        background-color: transparent;
+        border: 1px solid $ter-color;
+      }
+    }
+  }
+}
