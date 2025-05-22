@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, OnInit } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Iproduct } from '../../model/product';
 import { EcomService } from '../../services/ecom.service';
 
@@ -41,6 +41,8 @@ customOptions: OwlOptions = {
 
   ngOnInit(): void {
     this.paginationData()
+    console.log(this.getPaginationData);
+    
   }
 
   paginationData(){

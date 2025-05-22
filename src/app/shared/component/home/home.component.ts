@@ -14,9 +14,6 @@ allData: Iproduct[] = [];
 categories: string[] = [];
 uniqCat: string[] = [];
 
-
-
-
 page = 1;
 limit = 10;
 pagiData: any;
@@ -45,15 +42,11 @@ getData(page: number, limit: number): void {
 }
 
 getPageinationData(){
-  this._ecom.getPaginationData().subscribe(res=>{
-  console.log(res);
-  this._ecom.getPagiData$.next(res)
+  this._ecom.getPaginationData().subscribe((res:any)=>{
+  console.log(res.data);
+  this._ecom.getPagiData$.next(res.data)
   })
 }
-
-
-
-
 }
 
 

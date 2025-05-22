@@ -18,7 +18,6 @@ export class EcomService {
   ) {}
 
   fetchAllData(page:number, limit:number): Observable<Array<Iproduct>> {
-    // return this._http.get<any>(this.PRODUCT_URL)
     return this._http.get<Array<Iproduct>>(`${this.PRODUCT_URL}?page=${page}&limit=${limit}`)
   }
 

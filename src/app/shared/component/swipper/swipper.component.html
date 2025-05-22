@@ -1,10 +1,12 @@
-<div class="carousel px-5">
+<div class="carousel px-5" *ngIf="getPaginationData?.length">
   <owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide>{{getPaginationData[0].title}}1</ng-template>
-  <ng-template carouselSlide>{{getPaginationData[0].title}}2</ng-template>
-  <ng-template carouselSlide>{{getPaginationData[0].title}}3</ng-template>
-  <ng-template carouselSlide>{{getPaginationData[0].title}}4</ng-template>
-  <ng-template carouselSlide>{{getPaginationData[0].title}}5</ng-template>
-  <ng-template carouselSlide>{{getPaginationData[0].title}}6</ng-template>
-</owl-carousel-o>
+    <ng-template carouselSlide *ngFor="let item of getPaginationData">
+      <div class="card">
+        <img [src]="item.images" alt="{{ item.title }}" />
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.product_description }}</p>
+        <span class="price">${{ item.total_price }}</span>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
 </div>
