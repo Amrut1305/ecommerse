@@ -13,6 +13,8 @@ import { ContactComponent } from './shared/component/contact/contact.component';
 import { SigninComponent } from './shared/component/signin/signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './shared/component/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CarouselComponent } from './shared/component/carousel/carousel.component'
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { FooterComponent } from './shared/component/footer/footer.component';
     AboutComponent,
     ContactComponent,
     SigninComponent,
-    FooterComponent
+    FooterComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

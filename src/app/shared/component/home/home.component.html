@@ -1,1 +1,26 @@
-<p>home works!</p>
+<section class="homeSection">
+    <div class="row m-0">
+        <div class="col-md-3">
+            <div class="sidebar">
+                <Ul class="list-group sidebarList " *ngIf="uniqCat.length>0; else category">
+                    <li *ngFor="let cat of uniqCat;let i = index"
+                        class="list-group-item pb-0 d-flex justify-content-between">
+                        <h2>{{cat}}</h2><span *ngIf="i<2"><mat-icon>arrow_forward_ios</mat-icon></span>
+                    </li>
+                </Ul>
+                <ng-template #category>
+                    <Ul class="list-group sidebarList ">
+                        <li *ngFor="let cat of myCategories;let i = index"
+                            class="list-group-item pb-0 d-flex justify-content-between">
+                            <h2>{{cat}}</h2><span *ngIf="i<2"><mat-icon>arrow_forward_ios</mat-icon></span>
+                        </li>
+                    </Ul>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <app-carousel ></app-carousel>
+        </div>
+    </div>
+</section>

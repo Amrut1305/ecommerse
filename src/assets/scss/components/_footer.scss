@@ -1,0 +1,39 @@
+.footer-section{
+  background-color: $secondary-color;
+  color: $ter-color;
+  .footerList{
+    color: $ter-color;
+    li{
+      background-color: transparent;
+      font-size: 15px;
+      a{
+        text-decoration: none;
+        color: $ter-color;
+      }
+      .search-wrapper{
+        background-color: transparent;
+        width: 170px;
+        border: 1px solid $ter-color;
+        border-radius: 4px;
+        .exclusiveSearch{
+          background-color: transparent;
+        }
+      }
+      .download{
+        .store{
+          a{
+            display: inline-block;
+            margin-bottom: 15px;
+          }
+        }
+        img{
+          object-fit: cover;
+          width: 80px;
+        }
+      }
+    }
+  }
+  .copyright{
+    margin-bottom: 15px;
+  }
+}

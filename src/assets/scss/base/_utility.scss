@@ -35,19 +35,11 @@
     color: $dark-text;
     text-decoration: none;
   }
-}
-.footer-section{
-  background-color: $secondary-color;
-  color: $ter-color;
-  .footerList{
-    color: $ter-color;
-    li{
-      background-color: transparent;
-      font-size: 20px;
-      .search-wrapper{
-        background-color: transparent;
-        border: 1px solid $ter-color;
-      }
-    }
+  img{
+    width: 20px;
+    margin-right: 20px;
   }
+}
+.googleBtn{
+  border: 1px solid $dark-light-text;
 }

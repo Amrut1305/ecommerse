@@ -1,0 +1,14 @@
+.homeSection {
+    border-top: 1px solid $dark-light-text;
+    .sidebar {
+        border-right: 1px solid $dark-light-text;
+
+        ul {
+            li {
+                border: 0px;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
