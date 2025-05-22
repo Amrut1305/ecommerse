@@ -16,6 +16,10 @@ import { FooterComponent } from './shared/component/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselComponent } from './shared/component/carousel/carousel.component';
 import { TimerComponent } from './shared/component/timer/timer.component'
+import { SwiperModule } from 'swiper/angular';
+import { SwipperComponent } from './shared/component/swipper/swipper.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { TimerComponent } from './shared/component/timer/timer.component'
     SigninComponent,
     FooterComponent,
     CarouselComponent,
-    TimerComponent
+    TimerComponent,
+    SwipperComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,10 @@ import { TimerComponent } from './shared/component/timer/timer.component'
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SwiperModule,
+    CarouselModule,
+    CarouselModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
