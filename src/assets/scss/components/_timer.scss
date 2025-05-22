@@ -1,0 +1,15 @@
+.today {
+    
+    .timer {
+        .time {
+            font-size: 40px;
+        }
+        span {
+            display: inline-block;
+            margin-top: 25px;
+            color: $primary-color;
+            font-size: 35px;
+            margin-right: 10px;
+        }
+    }
+}
