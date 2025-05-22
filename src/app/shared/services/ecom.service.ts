@@ -10,8 +10,6 @@ import { Iproduct } from '../model/product';
 export class EcomService {
   BASE_URL: string = environment.base_url
   PRODUCT_URL: string = `${this.BASE_URL}/products`
-
-
   
   constructor(
     private _http: HttpClient,

@@ -14,7 +14,8 @@ import { SigninComponent } from './shared/component/signin/signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './shared/component/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CarouselComponent } from './shared/component/carousel/carousel.component'
+import { CarouselComponent } from './shared/component/carousel/carousel.component';
+import { TimerComponent } from './shared/component/timer/timer.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CarouselComponent } from './shared/component/carousel/carousel.componen
     ContactComponent,
     SigninComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

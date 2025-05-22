@@ -25,9 +25,7 @@ ngOnInit(): void {
 getData(page: number, limit: number): void {
   this._ecom.fetchAllData(page, limit).subscribe((res: any) => {
     this.allData.push(...res.data);
-
     this.categories.push(...res.data.map((prod: any) => prod.category));
-
     const totalPages = res.pagination.totalPages;
 
     if (this.page < totalPages) {
@@ -39,7 +37,6 @@ getData(page: number, limit: number): void {
     }
   });
 }
-
 
 
 }
