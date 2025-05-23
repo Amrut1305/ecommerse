@@ -19,6 +19,7 @@ import { TimerComponent } from './shared/component/timer/timer.component'
 import { SwiperModule } from 'swiper/angular';
 import { SwipperComponent } from './shared/component/swipper/swipper.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ProductDashComponent } from './shared/component/product-dash/product-dash.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FooterComponent,
     CarouselComponent,
     TimerComponent,
-    SwipperComponent
+    SwipperComponent,
+    ProductDashComponent
   ],
   imports: [
     BrowserModule,

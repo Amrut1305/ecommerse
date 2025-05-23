@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { SnackbarService } from '../../services/snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -14,7 +17,9 @@ export class SigninComponent implements OnInit {
 
 
   constructor(
-   
+  private _auth: AuthService,
+  private _snackbar: SnackbarService,
+  private _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,35 +44,35 @@ export class SigninComponent implements OnInit {
   onSignin() {
     if (this.LoginForm.valid) {
       let singUser = this.LoginForm.value
-      // this._auth.signIn(singUser).subscribe({
-      //   next: res => {
-      //     this.LoginForm.reset()
-      //     this._router.navigate(['home'])
-      //     this._snackbar.opensnack(res.message)
-      //     this._auth.savetoken(res.token)
-      //     this._auth.saveUserrole(res.userRole)
-      //   },
-      //   error: err => {
-      //     this._snackbar.opensnack(err.message)
-      //   }
-      // })
+      this._auth.signIn(singUser).subscribe({
+        next: res => {
+          this.LoginForm.reset()
+          this._router.navigate(['home'])
+          this._snackbar.opensnack(res.message)
+          this._auth.savetoken(res.token)
+          this._auth.saveUserrole(res.userRole)
+        },
+        error: err => {
+          this._snackbar.opensnack(err.message)
+        }
+      })
     }
   }
 
   onSignUp() {
      if(this.SignUpForm.valid) {
       let singUpUser = this.SignUpForm.value
-      // console.log(singUpUser);
-      // this._auth.signUp(singUpUser).subscribe({
-      //   next: res => {
-      //     this.SignUpForm.reset()
-      //     this.allreadyHasAcc = true
-      //     this._snackbar.opensnack(res.message)
-      //   },
-      //   error: err => {
-      //     this._snackbar.opensnack(err.error.message)
-      //   }
-      // })
+      console.log(singUpUser);
+      this._auth.signUp(singUpUser).subscribe({
+        next: res => {
+          this.SignUpForm.reset()
+          this.allreadyHasAcc = true
+          this._snackbar.opensnack(res.message)
+        },
+        error: err => {
+          this._snackbar.opensnack(err.error.message)
+        }
+      })
     }
   }
 

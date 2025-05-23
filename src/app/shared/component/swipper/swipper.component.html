@@ -1,12 +1,24 @@
-<div class="carousel px-5" *ngIf="getPaginationData?.length">
+
+
+<div class="carousel  px-5" *ngIf="getPaginationData?.length">
   <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide *ngFor="let item of getPaginationData">
-      <div class="card">
-        <img [src]="item.images" alt="{{ item.title }}" />
-        <h4>{{ item.title }}</h4>
-        <p>{{ item.product_description }}</p>
-        <span class="price">${{ item.total_price }}</span>
+    <ng-template carouselSlide  *ngFor="let item of getPaginationData">
+      <div class="card ml-4">
+        <div class="box m-2 text-white text-center">-30</div>
+        <div class="cardcss d-flex justify-content-between">
+           <img [src]="item.images" alt="{{ item.title }}" />
+        </div> 
+        <!-- <div class="cardBodyCss"> 
+        <h4>{{ item.title }}</h4>-->
+        <!-- <p>{{ item.product_description }}</p> -->
+        <!-- <span class="price">${{ item.total_price }}</span> 
+        </div>-->
       </div>
+      <div class="cardBodyCss">
+        <h4 class="title">{{ item.title }}</h4>
+        <!-- <p>{{ item.product_description }}</p> -->
+        <span class="price text-danger">{{ item.total_price }}</span>
+        </div>
     </ng-template>
   </owl-carousel-o>
 </div>

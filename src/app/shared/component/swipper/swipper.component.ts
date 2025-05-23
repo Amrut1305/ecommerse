@@ -3,21 +3,24 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Iproduct } from '../../model/product';
 import { EcomService } from '../../services/ecom.service';
 
+
+
 @Component({
   selector: 'app-swipper',
   templateUrl: './swipper.component.html',
   styleUrls: ['./swipper.component.scss']
 })
 export class SwipperComponent implements OnInit {
-getPaginationData !: Array<Iproduct>
+getPaginationData!: Array<Iproduct>;
 
-customOptions: OwlOptions = {
+  customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: true,
     navSpeed: 700,
+    margin: 5,
     navText: ['', ''],
     responsive: {
       0: {
@@ -34,21 +37,20 @@ customOptions: OwlOptions = {
       }
     },
     nav: true
-  }
-  constructor(
-    private _ecom : EcomService
-  ) { }
+  };
+
+  constructor(private _ecom: EcomService) {}
 
   ngOnInit(): void {
-    this.paginationData()
-    console.log(this.getPaginationData);
-    
+    this.paginationData();
   }
 
-  paginationData(){
-    this._ecom.getPagiData$.subscribe(res=>{
-    this.getPaginationData = res
-    })
+  paginationData(): void {
+    this._ecom.getPagiData$.subscribe(res => {
+      this.getPaginationData = res;
+      console.log(this.getPaginationData);
+    });
   }
 
 }
+

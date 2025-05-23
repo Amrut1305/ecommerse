@@ -3,14 +3,17 @@
         <div class="col-md-3">
             <div class="sidebar">
                 <Ul class="list-group sidebarList " *ngIf="uniqCat.length>0; else category">
-                    <li *ngFor="let cat of uniqCat;let i = index"
+                    <li 
+                    [queryParams]="{categories:cat}"
+                    routerLink="/products" *ngFor="let cat of uniqCat;let i = index"
                         class="list-group-item pb-0 d-flex justify-content-between">
                         <h2>{{cat}}</h2><span *ngIf="i<2"><mat-icon>arrow_forward_ios</mat-icon></span>
                     </li>
                 </Ul>
                 <ng-template #category>
                     <Ul class="list-group sidebarList ">
-                        <li *ngFor="let cat of myCategories;let i = index"
+                        <li [queryParams]="{categories:cat}"
+                        routerLink="/products" *ngFor="let cat of myCategories;let i = index"
                             class="list-group-item pb-0 d-flex justify-content-between">
                             <h2>{{cat}}</h2><span *ngIf="i<2"><mat-icon>arrow_forward_ios</mat-icon></span>
                         </li>
@@ -19,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-9 p-5">
             <app-carousel></app-carousel>
         </div>
     </div>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { EMPTY, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Iproduct } from '../model/product';
 
@@ -24,5 +24,13 @@ export class EcomService {
   getPaginationData(): Observable<Array<Iproduct>>{
     return this._http.get<Array<Iproduct>>(`${this.PRODUCT_URL}`)
   }
+
+  getCatData(cat: string | null): Observable<Array<Iproduct>> {
+  if (cat) {
+    return this._http.get<Array<Iproduct>>(`${this.PRODUCT_URL}/${cat}`);
+  } else {
+    return EMPTY; // returns an empty observable, avoids errors
+  }
+}
 
 }
